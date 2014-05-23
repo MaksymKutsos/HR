@@ -35,6 +35,7 @@ public class HrServiceTest {
     private void createEmployees() {
         Employee employee = new Employee("Alex", "Panov", 1989);
         oldestEmployee = new Employee("Max", "Kutsos", 1901);
+
         when(employeeRepository.getAllEmployees()).thenReturn(Arrays.asList(employee, oldestEmployee));
     }
 }
