@@ -15,6 +15,14 @@ public class HrService {
 
 
     public Employee getOldestEmployee() {
-        return null;
+        int maxAge = 0;
+        Employee oldest = null;
+        for (Employee employee : employeeRepository.getAllEmployees()) {
+            if (employee.getAge() > maxAge) {
+                oldest = employee;
+                maxAge = employee.getAge();
+            }
+        }
+        return oldest;
     }
 }
