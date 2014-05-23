@@ -8,9 +8,23 @@ public class Employee {
 
 
     public Employee(String firstName, String lastName, int yearOfBirth) {
+        validateYearOfBirth(yearOfBirth);
+
         this.firstName = firstName;
         this.lastName = lastName;
         this.yearOfBirth = yearOfBirth;
+    }
+
+
+    private void validateYearOfBirth(int yearOfBirth) {
+        if (isNotValid(yearOfBirth)) {
+            throw new IllegalArgumentException(yearOfBirth + " is not a valid year of birth");
+        }
+    }
+
+
+    private boolean isNotValid(int yearOfBirth) {
+        return true;
     }
 
 

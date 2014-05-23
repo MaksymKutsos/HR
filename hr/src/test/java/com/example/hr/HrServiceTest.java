@@ -5,6 +5,8 @@ import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.*;
 
 import java.util.Arrays;
+import java.util.Random;
+import java.util.UUID;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -36,5 +38,13 @@ public class HrServiceTest {
         Employee employee = new Employee("Alex", "Panov", 1989);
         oldestEmployee = new Employee("Max", "Kutsos", 1901);
         when(employeeRepository.getAllEmployees()).thenReturn(Arrays.asList(oldestEmployee, employee));
+    }
+
+
+    @Test
+    public void randomDataShowcase() throws Exception {
+        Random random = new Random();
+        System.out.println(random.nextInt());
+        System.out.println(UUID.randomUUID().toString());
     }
 }
